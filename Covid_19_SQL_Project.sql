@@ -1,12 +1,17 @@
+/*
+Covid 19 Data Exploration 
+Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+*/
+
 SELECT *
 FROM PortfolioProjectCovid19.dbo.CovidDeaths
 ORDER BY location, date
 
---SELECT *
---FROM PortfolioProjectCovid19.dbo.CovidVaccinations
---ORDER BY location, date
+SELECT *
+FROM PortfolioProjectCovid19.dbo.CovidVaccinations
+ORDER BY location, date
 
---Selecting data the we're going to use
+--Selecting data that we're going to use
 
 SELECT location, date,total_cases, new_cases, total_deaths, population
 FROM PortfolioProjectCovid19.dbo.CovidDeaths
