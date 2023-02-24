@@ -11,14 +11,14 @@ SELECT *
 FROM PortfolioProjectCovid19.dbo.CovidVaccinations
 ORDER BY location, date
 
---Selecting data that we're going to use
+--Selecting data that I'm going to use
 
 SELECT location, date,total_cases, new_cases, total_deaths, population
 FROM PortfolioProjectCovid19.dbo.CovidDeaths
 ORDER BY location, date
 
 --Comparing total_cases with total_deaths
---Shows likelihood of dying if someone contracts COVID
+--Shows the risk percentage of dying if someone contracts COVID in United States
 
 SELECT location,date, total_cases, total_deaths, ROUND((total_deaths/total_cases)*100,3) AS percent_deaths
 FROM PortfolioProjectCovid19.dbo.CovidDeaths
@@ -26,7 +26,7 @@ WHERE location LIKE '%states%'
 ORDER BY location, date
 
 --Looking at total_cases Vs population
---Shows what percentage of Population got Covid
+--Shows what percentage of Population got Covid in India
 
 SELECT location, date, population, total_cases, ROUND((total_cases/population)*100,3) AS percentage_population_infected
 FROM PortfolioProjectCovid19.dbo.CovidDeaths
